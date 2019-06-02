@@ -351,7 +351,27 @@
 		证明:存在$n$维实向量$\boldsymbol{a},s.t.,\boldsymbol{a}'\boldsymbol{A}\boldsymbol{a}=0.$
 	\end{exercise}
 	\begin{proof}
-		内容...
+		设$\boldsymbol{A}$的秩为$r$,作实非退化线性替换$\boldsymbol{X}=\boldsymbol{CY}$,将$f$化为规范形
+		$$
+		f(x_1,\cdots,x_n)=\boldsymbol{X}'\boldsymbol{AX}=y_1^2+\cdots+y_p^2-y^2_{p+1}-\cdots-y^2_{p+q}(r=p+q)
+		$$
+		由于存在两个向量$\boldsymbol{X}_1,\boldsymbol{X}_2$,使$\boldsymbol{X}'_1\boldsymbol{AX}_1>0,\boldsymbol{X}'_2\boldsymbol{AX}_2<0$,,从而可得$p>0,q>0$.\\
+		令
+		$$
+		y_1=y_{p+1}=1,y_2=\cdots=y_p=y_{p+2}=\cdots=y_{p+q}=0,
+		$$
+		取$n$维列向量
+		$$
+		\boldsymbol{X}_0=\boldsymbol{C}
+		\begin{bmatrix}
+		1\\0\\\vdots\\0\\1\\0\\\vdots\\0
+		\end{bmatrix}
+		$$
+		中间的1位于第$p+1$行.\\
+		由于$\boldsymbol{X}=\boldsymbol{CY}$非退化,故$\boldsymbol{X}_0\ne\boldsymbol{0}$,且有
+		$$
+		\boldsymbol{X}'_0\boldsymbol{AX}_0=0
+		$$
 	\end{proof}
 	\begin{exercise}
 		设$\boldsymbol{A}$是$n$阶实对称矩阵,证明:
@@ -375,7 +395,7 @@
 		即$$|\boldsymbol{X}'\boldsymbol{AX}|\leqslant c\boldsymbol{X}'\boldsymbol{X}$$
 	\end{proof}
 	\begin{exercise}
-		(1)证明:如果$\sum^n_{i=1}\sum^n_{j=1}a_{ij}x_ix_j(a_{ij}=a_{ji})$是正定二次型.那么
+		(1)证明:如果${\displaystyle \sum^n_{i=1}\sum^n_{j=1}}a_{ij}x_ix_j(a_{ij}=a_{ji})$是正定二次型.那么
 		$$
 		f(y_1,\dots,y_n)=
 		\begin{bmatrix}
@@ -470,6 +490,37 @@
 		(2)假设$\boldsymbol{B}$也正定.证明:$|\boldsymbol{A}+\boldsymbol{B}|\geq|\boldsymbol{A}|+|\boldsymbol{B}|.$\\
 		(3)假设$\boldsymbol{B}$也正定,且$\boldsymbol{A}\boldsymbol{B}=\boldsymbol{B}\boldsymbol{A}$,证明$\boldsymbol{A}\boldsymbol{B}$也是正定矩阵.
 	\end{exercise}
+	\begin{proof}
+		(1)\\
+		$\boldsymbol{A}$正定,所以存在正交矩阵$\boldsymbol{P}^{-1}=\boldsymbol{P'}$使得,
+		$$
+		\boldsymbol{P}'\boldsymbol{AP}=diag(a_1,\cdots,a_n),
+		$$
+		$a_1,\cdots,a_n>0$为$\boldsymbol{A}$的特征值.\\
+		$\boldsymbol{P}'\boldsymbol{BP}=\boldsymbol{P}^{-1}\boldsymbol{BP}$也是对称矩阵,且与$\boldsymbol{B}$有相同的特征值.所以存在正交矩阵$\boldsymbol{Q}^{-1}=\boldsymbol{Q}'$使得,
+		$$
+		\boldsymbol{Q}'(\boldsymbol{P}'\boldsymbol{BP})\boldsymbol{Q}=\boldsymbol{Q^{-1}}(\boldsymbol{P}^{-1}\boldsymbol{BP})\boldsymbol{Q}=diag(b_1,\cdots,b_n),
+		$$
+		其中$b_1,\cdots,b_n$为$\boldsymbol{B}$的特征值.所以:
+		$$
+		\boldsymbol{Q}'(\boldsymbol{P}'(\boldsymbol{A}+\boldsymbol{B})\boldsymbol{P})\boldsymbol{Q}=\boldsymbol{Q}^{-1}(\boldsymbol{P}^{-1}(\boldsymbol{A}+\boldsymbol{B})\boldsymbol{P})\boldsymbol{Q}=diag(a_1+b_1,\cdots,a_n+b_n).
+		$$
+		所以存在实可逆矩阵$\boldsymbol{T}=\boldsymbol{PQ}$,使得$\boldsymbol{T}'(\boldsymbol{A}+\boldsymbol{B})\boldsymbol{T}$为对角矩阵.
+	\end{proof}
+	\begin{proof}
+		(2)\\
+		$\boldsymbol{B}$也正定,因此$b_1,\cdots,b_n>0$.
+		\begin{align*}
+			|\boldsymbol{Q}'(\boldsymbol{P}'(\boldsymbol{A}+\boldsymbol{B})\boldsymbol{P})\boldsymbol{Q}|
+			&=|diag(a_1+b_1,\cdots,a_n+b_n)|\\
+			&=\prod_{i=1}^{n}(a_i+b_i)\\
+			&>\prod_{i=1}^{n}a_i+\prod_{i=1}^{n}b_i\\
+			&=|\boldsymbol{P}^{-1}\boldsymbol{AP}|+|\boldsymbol{P}^{-1}\boldsymbol{BP}|=|\boldsymbol{A}|+|\boldsymbol{B}|.
+			\end{align*}
+			$$
+			\Rightarrow|\boldsymbol{A}+\boldsymbol{B}|\ge|\boldsymbol{A}|+|\boldsymbol{B}|.
+			$$
+	\end{proof}
 	\begin{proof}
 		(3)存在一个n级正交矩阵$\boldsymbol{T},s.t.$
 		$$
@@ -663,6 +714,21 @@
 	\begin{exercise}
 		设$\sigma$是有限维线性空间$V$的可逆线性变换.设$W$是$V$中$\sigma-$不变子空间,证明:$W$是$V$中$\sigma^{-1}-$不变子空间.
 	\end{exercise}
+	\begin{proof}
+		已知$\boldsymbol{\alpha}\in W,\sigma(\boldsymbol{\alpha})\in W$.\\
+		设$\sigma(\boldsymbol{\alpha})=\boldsymbol{\beta}$,因$\sigma$可逆,即若:
+		$$
+		\sigma^{-1}(\boldsymbol{\beta})=\boldsymbol{\alpha}\qquad\boldsymbol{\beta}\;and\;\sigma^{-1}(\boldsymbol{\beta})\in W
+		$$
+		所以$W$是$V$中$\sigma^{-1}-$不变子空间
+	\end{proof}
+	下证$\sigma$为双射:
+	\begin{proof}
+		设$\sigma$为可逆变换,它的逆变换为$\sigma^{-1}$.\\
+		任取$\boldsymbol{\xi},\boldsymbol{\eta}\in W$,且$\boldsymbol{\xi}\ne\boldsymbol{\eta}$,则必有$\sigma(\boldsymbol{\xi})\ne\sigma(\boldsymbol{\eta})$.不然,设$\sigma(\boldsymbol{\xi})=\sigma(\boldsymbol{\eta})$,两边左乘$\sigma^{-1}$,有$\boldsymbol{\xi}=\boldsymbol{\eta}$,这与条件矛盾,所以$\sigma$是单射.\\
+		其次,对任一向量$\boldsymbol{\xi}\in W$,必有$\boldsymbol{\eta}$使$\sigma(\boldsymbol{\xi})=\boldsymbol{\eta}$,事实上,令$\sigma^{-1}(\boldsymbol{\eta})=\boldsymbol{\xi}$即可,所以$\sigma$是满射,故$\sigma$是双射,即$\sigma^{-1}(\boldsymbol{\beta})=\boldsymbol{\alpha}$.
+	\end{proof}
+
 	\begin{exercise}
 		设$\sigma$是正交变换,证明:$\sigma$的不变子空间的正交补也是$\sigma$的不变子空间.
 	\end{exercise}
@@ -706,7 +772,22 @@
 		设$\boldsymbol{A},\boldsymbol{B}$都是实对称矩阵,证明:存在正交矩阵$\boldsymbol{Q},s.t.,\boldsymbol{Q}^{-1}\boldsymbol{AQ}=\boldsymbol{B}$的充要条件为$\boldsymbol{A},\boldsymbol{B}$的特征多项式的根全部相同.
 	\end{exercise}
 	\begin{proof}
-		...
+		必要性.若$\boldsymbol{T}'\boldsymbol{AT}=\boldsymbol{B}$,即$\boldsymbol{A},\boldsymbol{B}$相似,则$\boldsymbol{A},\boldsymbol{B}$的特征多项式相同,所以它们的特征根相同.\\
+		充分性.设$\lambda_1,\lambda_2,\cdots,\lambda_n$为$\boldsymbol{A}$和$\boldsymbol{B}$的特征值,由$\boldsymbol{A},\boldsymbol{B}$为实对称矩阵,则存在正交矩阵$\boldsymbol{X}$和$\boldsymbol{Y}$,使
+		$$
+		\boldsymbol{X}^{-1}\boldsymbol{AX}=
+		\begin{bmatrix}
+		\lambda_1&&\\
+		&\ddots&\\
+		&&\lambda_n
+		\end{bmatrix}
+		=\boldsymbol{Y}^{-1}\boldsymbol{BY}
+		$$
+		于是
+		$$
+		\boldsymbol{YX}^{-1}\boldsymbol{AXY}^{-1}=\boldsymbol{B}
+		$$
+		令$\boldsymbol{T}=\boldsymbol{XY}^{-1}$,由$\boldsymbol{X},\boldsymbol{Y}$是正交矩阵知,$\boldsymbol{T}$也是正交矩阵,且有$\boldsymbol{T}^{-1}\boldsymbol{AT}=\boldsymbol{B}$.
 	\end{proof}
 	\begin{exercise}
 		设$\boldsymbol{A}$是$n$阶实对称矩阵,且$\boldsymbol{A}^2=\boldsymbol{A}$.证明:存在正交矩阵
