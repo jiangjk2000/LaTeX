@@ -12,7 +12,7 @@
 \extrainfo{Even though the truth is not a happy time, we have to be honest ,because more effort needed to cover the truth. --- Bertr Russell}
 \logo{logo.png}
 \cover{cover.jpg}
-\everymath{\displaystyle}
+
 \begin{document}
 	\maketitle
 	\mainmatter
@@ -229,7 +229,7 @@
 		\frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}&0\\
 		\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0
 		\end{bmatrix}
-		\qquad\boldsymbol{T}'\boldsymbol{AT}=D=diag(3,3,1,1);
+		\qquad\boldsymbol{T}'\boldsymbol{AT}=\boldsymbol{D}=diag(3,3,1,1);
 		$$
 		令
 		$$
@@ -242,7 +242,7 @@
 		y_1\\y_2\\y_3\\y_4
 		\end{bmatrix}.
 		$$
-		则\\
+		则
 		$$f(y_1,y_2,y_3,y_4)=3y_1^2+3y_2^2+y_3^2+y_4^2.$$
 	\end{proof}
 	\begin{exercise}
@@ -285,7 +285,7 @@
 		\frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}\\
 		\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}
 		\end{bmatrix}
-		\qquad\boldsymbol{T}'\boldsymbol{AT}=D=diag(5,2,1);
+		\qquad\boldsymbol{T}'\boldsymbol{AT}=\boldsymbol{D}=diag(5,2,1);
 		$$
 		令
 		$$
@@ -298,7 +298,7 @@
 		y_1\\y_2\\y_3
 		\end{bmatrix}.
 		$$
-		则\\
+		则
 		$$f(y_1,y_2,y_3)=5y_1^2+2y_2^2+y_3^2.$$
 	\end{proof}
 	\begin{exercise}
@@ -498,9 +498,45 @@
 		-2&-4&5
 		\end{bmatrix};
 		$$
-		$\lambda_1$的特征值为10,特征向量为$$\boldsymbol{v}_1=\begin{bmatrix}-1\\-2\\2\end{bmatrix}$$
-		$\lambda_2$的特征值为1,特征向量为$$\boldsymbol{v}_2=\begin{bmatrix}2\\0\\1\end{bmatrix}$$
-		$\lambda_3$的特征值为1,特征向量为$$\boldsymbol{v}_3=\begin{bmatrix}-2\\1\\0\end{bmatrix}$$
+		$\lambda_1,\lambda_2,\lambda_3$的特征值分别为10,1,1特征向量分别为$$\boldsymbol{v}_1=\begin{bmatrix}-1\\-2\\2\end{bmatrix}\;\boldsymbol{v}_2=\begin{bmatrix}2\\0\\1\end{bmatrix}\;\boldsymbol{v}_3=\begin{bmatrix}-2\\1\\0\end{bmatrix}$$
+		将$\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3$正交化,单位化得$\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$:
+		$$
+		\boldsymbol{\beta}_1=
+		\begin{bmatrix}
+		-\frac{1}{3}\\-\frac{2}{3}\\\frac{2}{3}
+		\end{bmatrix}
+		\boldsymbol{\beta}_2=
+		\begin{bmatrix}
+		\frac{2}{\sqrt{5}}\\0\\\frac{1}{\sqrt{5}}
+		\end{bmatrix}
+		\boldsymbol{\beta}_3=
+		\begin{bmatrix}
+		-\frac{2}{3\sqrt{5}}\\\frac{5}{3\sqrt{5}}\\\frac{4}{3\sqrt{5}}
+		\end{bmatrix}
+		$$
+		即
+		$$
+		\boldsymbol{T}=
+		\begin{bmatrix}
+		-\frac{1}{3}&\frac{2}{\sqrt{5}}&-\frac{2}{3\sqrt{5}}\\
+		-\frac{2}{3}&0&\frac{5}{3\sqrt{5}}\\
+		\frac{2}{3}&\frac{1}{\sqrt{5}}&\frac{4}{3\sqrt{5}}
+		\end{bmatrix}
+		\qquad\boldsymbol{T}'\boldsymbol{AT}=\boldsymbol{D}=diag(10,1,1);
+		$$
+		令
+		$$
+		\begin{bmatrix}
+		x_1\\x_2\\x_3
+		\end{bmatrix}
+		=
+		\boldsymbol{T}
+		\begin{bmatrix}
+		y_1\\y_2\\y_3\
+		\end{bmatrix}.
+		$$
+		则
+		$$f(y_1,y_2,y_3)=10y_1^2+y_2^2+y_3^2.$$
 	\end{proof}
 	\begin{exercise}
 		设二次型
@@ -510,6 +546,28 @@
 		(1)求二次型$f$的矩阵的所有特征值;\\
 		(2)若二次型的规范性为$y_1^2+y_2^2$,求a的值和各特征值的一个特征向量.
 	\end{exercise}
+	\begin{proof}
+		(1)二次型的矩阵$\boldsymbol{A}$为:
+		$$
+		\boldsymbol{A}=
+		\begin{bmatrix}
+		a&0&1\\
+		0&a&-1\\
+		1&-1&a-1
+		\end{bmatrix}\;
+		|\lambda\boldsymbol{I}-\boldsymbol{A}|=
+		\begin{vmatrix}
+		\lambda-a&0&-1\\
+		0&\lambda-a&1\\
+		-1&1&\lambda-(a-1)
+		\end{vmatrix}
+		$$
+		解得$\lambda_1,\lambda_2,\lambda_3$的特征值分别为$a-2,a,a+1$,特征向量分别为$$\boldsymbol{v}_1=\begin{bmatrix}-1\\1\\2\end{bmatrix},\;\boldsymbol{v}_2=\begin{bmatrix}1\\1\\0\end{bmatrix},\;\boldsymbol{v}_3=\begin{bmatrix}1\\-1\\1\end{bmatrix}.$$
+	\end{proof}
+	\begin{proof}
+		(2)若规范性为$y_1^2+y_2^2,a$只能为$2$,即:\\
+		$\lambda_1,\lambda_2,\lambda_3$的特征值分别为$0,2,3$,特征向量分别为$$\boldsymbol{v}_1=\begin{bmatrix}-1\\1\\2\end{bmatrix},\;\boldsymbol{v}_2=\begin{bmatrix}1\\1\\0\end{bmatrix},\;\boldsymbol{v}_3=\begin{bmatrix}1\\-1\\1\end{bmatrix}.$$
+	\end{proof}
 	\begin{exercise}
 		若$n\times n$矩阵$\boldsymbol{A}$可逆,\\
 		(1)证明$\boldsymbol{A}'\boldsymbol{A}$正定.\\
@@ -518,6 +576,32 @@
 		\boldsymbol{P}'\boldsymbol{AQ}=diag(a_1,\cdots,a_n),where \; a_i>0,i=1,\cdots,n.
 		$$
 	\end{exercise}
+	\begin{proof}
+		(1)
+		$$
+		\boldsymbol{A}'\boldsymbol{A}=\boldsymbol{A}'\boldsymbol{IA}
+		$$
+		因此$\boldsymbol{A}'\boldsymbol{A}$合同与单位矩阵,即$\boldsymbol{A}'\boldsymbol{A}$正定.
+	\end{proof}
+	\begin{proof}
+		(2)
+		$\boldsymbol{A}'\boldsymbol{A}$正定,因此存在正交矩阵$\boldsymbol{P}$,使得
+		$$
+		\boldsymbol{P}'\boldsymbol{A}'\boldsymbol{AP}=diag(b_1,\cdots,b_n),where\;b_i>0,i=0,\cdots,n.
+		$$
+		令
+		$$
+		\boldsymbol{D}=diag(\sqrt{b_1},\cdots,\sqrt{b_n}),\;\boldsymbol{Q}=\boldsymbol{A}'\boldsymbol{PD},
+		$$
+		容易求得
+		$$
+		\boldsymbol{Q}'\boldsymbol{Q}=(\boldsymbol{A}'\boldsymbol{PD})'\boldsymbol{A}'\boldsymbol{PD}=\boldsymbol{I}_n,
+		$$
+		因此矩阵$\boldsymbol{Q}$为正交矩阵,令$a_i=\sqrt{b_i},i=1\cdots,n.$则
+		$$
+		\boldsymbol{P}'\boldsymbol{AQ}=\boldsymbol{D}=diag(a_1,\cdots,a_n).
+		$$
+	\end{proof}
 	\begin{exercise}
 		求线性方程组
 		$
@@ -528,15 +612,90 @@
 		\end{cases}
 		$的解空间$W$及其正交补空间$W^{\perp}$.
 	\end{exercise}
+	\begin{proof}
+		系数矩阵作初等行变换得:
+		$$
+		\boldsymbol{A}=
+		\begin{bmatrix}
+		2&1&3&-1\\
+		3&2&0&-2\\
+		3&1&9&-1
+		\end{bmatrix}
+		\xRightarrow{}
+		\begin{bmatrix}
+		1&0&6&0\\
+		0&1&-9&-1\\
+		0&0&0&0
+		\end{bmatrix}
+		$$
+		因此,方程组的两个线性无关的向量为:
+		$$
+		\boldsymbol{\alpha}_1=
+		\begin{bmatrix}
+		0\\1\\0\\1
+		\end{bmatrix},\;
+		\boldsymbol{\alpha}_2=
+		\begin{bmatrix}
+		-6\\9\\1\\0
+		\end{bmatrix}.
+		$$
+		$W=L(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2)$.
+		设正交补空间$W^\perp$的任一向量为$\boldsymbol{\beta}=(y_1,y_2,y_3,y_4)'$.则$\boldsymbol{\alpha}_1'\boldsymbol{\beta}=\boldsymbol{\alpha}_2'\boldsymbol{\beta}=0$.即
+		$$
+		\begin{cases}
+		y_2+y_4=0\\
+		-6y_1+9y_2+y_3=0
+		\end{cases}
+		$$
+		因此,上面的方程组的两个线性无关的向量为:
+		$$
+		\boldsymbol{\beta}_1=
+		\begin{bmatrix}
+		1\\0\\6\\0
+		\end{bmatrix},\;
+		\boldsymbol{\beta}_2=
+		\begin{bmatrix}
+		-3\\-2\\0\\2
+		\end{bmatrix}.
+		$$
+		所以,正交补空间$W^\perp=L(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2)$.
+	\end{proof}
 	\begin{exercise}
 		设$\sigma$是有限维线性空间$V$的可逆线性变换.设$W$是$V$中$\sigma-$不变子空间,证明:$W$是$V$中$\sigma^{-1}-$不变子空间.
 	\end{exercise}
 	\begin{exercise}
 		设$\sigma$是正交变换,证明:$\sigma$的不变子空间的正交补也是$\sigma$的不变子空间.
 	\end{exercise}
+	\begin{proof}
+		设$W$是$\sigma$的任意一个不变子空间,取$W$的一组标准正交基$\epsilon_1,\cdots,\epsilon_n$,把它扩成$V$的一组标准正交基$\epsilon_1,\cdots,\epsilon_m,\epsilon_{m+1},\cdots,\epsilon_n$,由
+		$$
+		dim(W)+dim(W^\perp)=n
+		$$
+		$$
+		W=L(\epsilon_1,\cdots,\epsilon_m),\;W^\perp=L(\epsilon_{m+1},\cdots,\epsilon_n).
+		$$
+		又$\sigma$是正交变换,则$\sigma(\epsilon_1),\cdots,\sigma(\epsilon_n)$也是标准正交基,由于$W$是$\sigma$的不变子空间,所以$\sigma(\epsilon_1),\cdots,\sigma(\epsilon_m)\in W$.且为$W$的一组标准正交基,从而$\sigma(\epsilon_{m+1},\cdots,\sigma(\epsilon_n))\in W^\perp$\\
+		任取$\alpha\in W^\perp$则
+		$$
+		\alpha=k_{m+1}\epsilon_{m+1}+\cdots+k_n\epsilon_n\in W^\perp,
+		$$
+		所以
+		$$
+		\sigma(\alpha)=k_{m+1}\epsilon_{m+1}+\cdots+k_n\sigma(\epsilon_n)\in W^\perp.
+		$$
+		$W^\perp$是$\sigma$的不变子空间.
+	\end{proof}
 	\begin{exercise}
 		证明:反对称矩阵的特征值为0或者纯虚数。
 	\end{exercise}
+	\begin{proof}
+		设$\boldsymbol{A}$是反对称实矩阵,$\lambda$是$\boldsymbol{A}$的一个特征值,$\boldsymbol{\xi}$为相应的特征向量,即$\boldsymbol{A\xi}=\lambda\boldsymbol{\xi}$,则
+		$$
+		\bar{\boldsymbol{\xi}}'\boldsymbol{A\xi}=\bar{\boldsymbol{\xi}}'(-\boldsymbol{A}')\boldsymbol{\xi}=-\bar{\boldsymbol{\xi}}'\boldsymbol{A}'\boldsymbol{\xi}=-(\boldsymbol{A}\bar{\boldsymbol{\xi}})'\boldsymbol{\xi}=-(\overline{\boldsymbol{A\xi}})'\boldsymbol{\xi}
+		$$
+		即有$\lambda\bar{\boldsymbol{\xi}}\boldsymbol{\xi}=-\bar{\lambda}\bar{\boldsymbol{\xi}}\boldsymbol{\xi}$,从而$\lambda=-\bar{\lambda}$.\\
+		令$\lambda=a+ib$,代入上式得$a+ib=-(a-ib)$,即有$a=0$.故$\lambda$是0或纯虚数.
+	\end{proof}
 	\begin{exercise}
 		如果$\lambda$是正交矩阵$\boldsymbol{A}$的特征值,则$\frac{1}{\lambda}$也是正交矩阵$\boldsymbol{A}$的特征值.
 	\end{exercise}
@@ -547,12 +706,7 @@
 		设$\boldsymbol{A},\boldsymbol{B}$都是实对称矩阵,证明:存在正交矩阵$\boldsymbol{Q},s.t.,\boldsymbol{Q}^{-1}\boldsymbol{AQ}=\boldsymbol{B}$的充要条件为$\boldsymbol{A},\boldsymbol{B}$的特征多项式的根全部相同.
 	\end{exercise}
 	\begin{proof}
-		设$\boldsymbol{A}$是反对称实矩阵,$\lambda$是$\boldsymbol{A}$的一个特征值,$\boldsymbol{\xi}$为相应的特征向量,即$\boldsymbol{A\xi}=\lambda\boldsymbol{\xi}$,则
-		$$
-		\bar{\boldsymbol{\xi}}'\boldsymbol{A\xi}=\bar{\boldsymbol{\xi}}'(-\boldsymbol{A}')\boldsymbol{\xi}=-\bar{\boldsymbol{\xi}}'\boldsymbol{A}'\boldsymbol{\xi}=-(\boldsymbol{A}\bar{\boldsymbol{\xi}})'\boldsymbol{\xi}=-(\overline{\boldsymbol{A\xi}})'\boldsymbol{\xi}
-		$$
-		即有$\lambda\bar{\boldsymbol{\xi}}\boldsymbol{\xi}=-\bar{\lambda}\bar{\boldsymbol{\xi}}\boldsymbol{\xi}$,从而$\lambda=-\bar{\lambda}$.\\
-		令$\lambda=a+ib$,代入上式得$a+ib=-(a-ib)$,即有$a=0$.故$\lambda$是0或纯虚数.
+		...
 	\end{proof}
 	\begin{exercise}
 		设$\boldsymbol{A}$是$n$阶实对称矩阵,且$\boldsymbol{A}^2=\boldsymbol{A}$.证明:存在正交矩阵
@@ -567,15 +721,7 @@
 		$$
 		又由于$\boldsymbol{A}^2=\boldsymbol{A}$,所以有$\lambda^2\boldsymbol{\xi}=\boldsymbol{A}^2\boldsymbol{\xi}=\boldsymbol{A\xi}=\lambda\boldsymbol{\xi}$,即$(\lambda^2-\lambda)\boldsymbol{\xi}=0$,因为$\boldsymbol{\xi}\ne\boldsymbol{0}$,故$\lambda^2-\lambda=0$,从而$\lambda=0$或1,再由定理7知,存在正交矩阵$\boldsymbol{Q}$,使
 		$$
-		\boldsymbol{Q}^{-1}\boldsymbol{AQ}=
-		\begin{vmatrix}
-		1& & & & & \\
-		&\ddots& & & & \\
-		& &1& & & \\
-		& & &0& & \\
-		& & & &\ddots& \\
-		& & & & &0\\
-		\end{vmatrix}
+		\boldsymbol{Q}^{-1}\boldsymbol{AQ}=diag(1,\cdots,1,0,\cdots,0).
 		$$
 		在上式中的对角线元素中,1的个数为$\boldsymbol{A}$的特征值1的个数,0的个数为$\boldsymbol{A}$的特征值0的个数.
 	\end{proof}
