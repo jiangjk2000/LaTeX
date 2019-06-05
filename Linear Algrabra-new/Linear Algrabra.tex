@@ -1,5 +1,6 @@
 \documentclass[lang=cn,11pt,normal]{elegantbook}
 \usepackage{mathtools}
+\usepackage{LAbf}
 % title info
 \title{Linear Algrabra}
 \subtitle{高等代数作业}
@@ -12,17 +13,8 @@
 \extrainfo{Even though the truth is not a happy time, we have to be honest ,because more effort needed to cover the truth. --- Bertr Russell}
 \logo{logo.png}
 \cover{cover.jpg}
-\renewcommand{\AA}{\boldsymbol{A}}
-\newcommand{\BB}{\boldsymbol{B}}
-\newcommand{\CC}{\boldsymbol{C}}
-\newcommand{\DD}{\boldsymbol{D}}
-\newcommand{\XX}{\boldsymbol{X}}
-\newcommand{\YY}{\boldsymbol{Y}}
-\newcommand{\II}{\boldsymbol{I}}
-\newcommand{\TT}{\boldsymbol{T}}
-\newcommand{\PP}{\boldsymbol{P}}
-\newcommand{\QQ}{\boldsymbol{Q}}
-\newcommand{\varep}{\varepsilon}
+
+
 \begin{document}
 	\maketitle
 	\mainmatter
@@ -55,13 +47,13 @@
 		$\AA$的全部特征值是2(二重),-7.\\
 		对特征值2,求出$(2\II-\AA)\XX=0$的基础解系:
 		\begin{equation}
-		\boldsymbol{\alpha}_1=
+		\bfaf_1=
 		\begin{bmatrix}
 		2\\
 		0\\
 		1
 		\end{bmatrix},
-		\boldsymbol{\alpha}_2=
+		\bfaf_2=
 		\begin{bmatrix}
 		-2\\
 		-1\\
@@ -70,7 +62,7 @@
 		\end{equation}
 		对特征值-7,求出$(-7\II-\AA)\XX=0$的基础解系:\\
 		\begin{equation}
-		\boldsymbol{\alpha}_3=
+		\bfaf_3=
 		\begin{bmatrix}
 		-1\\
 		-2\\
@@ -79,43 +71,43 @@
 		\end{equation}
 		得到三个线性无关的特征向量
 		\begin{equation}
-		\boldsymbol{\alpha}_1=
+		\bfaf_1=
 		\begin{bmatrix}
 		2\\
 		0\\
 		1
 		\end{bmatrix},
-		\boldsymbol{\alpha}_2=
+		\bfaf_2=
 		\begin{bmatrix}
 		-2\\
 		-1\\
 		0
 		\end{bmatrix},
-		\boldsymbol{\alpha}_3=
+		\bfaf_3=
 		\begin{bmatrix}
 		-1\\
 		-2\\
 		2
 		\end{bmatrix}.
 		\end{equation}
-		将$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$正交化\\
+		将$\bfaf_1,\bfaf_2,\bfaf_3$正交化\\
 		\begin{equation}
 		\begin{aligned}
-		\boldsymbol{\beta}_1&=\boldsymbol{\alpha}_1=
+		\bfbt_1&=\bfaf_1=
 		\begin{bmatrix}
 		2\\0\\1
 		\end{bmatrix}\\
-		\boldsymbol{\beta}_2&=\boldsymbol{\alpha}_2-\frac{(\boldsymbol{\alpha}_2,\boldsymbol{\beta}_1)}{(\boldsymbol{\beta}_1,\boldsymbol{\beta}_1)}=
+		\bfbt_2&=\bfaf_2-\frac{(\bfaf_2,\bfbt_1)}{(\bfbt_1,\bfbt_1)}=
 		\begin{bmatrix}
 		-\frac{4}{5}\\0\\\frac{8}{5}
 		\end{bmatrix}\\
-		\boldsymbol{\beta}_3&=\boldsymbol{\alpha}_3-\frac{(\boldsymbol{\alpha}_3,\boldsymbol{\beta}_2)}{(\boldsymbol{\beta}_2,\boldsymbol{\beta}_2)}-\frac{(\boldsymbol{\alpha}_3,\boldsymbol{\beta}_1)}{(\boldsymbol{\beta}_1,\boldsymbol{\beta}_1)}=
+		\bfbt_3&=\bfaf_3-\frac{(\bfaf_3,\bfbt_2)}{(\bfbt_2,\bfbt_2)}-\frac{(\bfaf_3,\bfbt_1)}{(\bfbt_1,\bfbt_1)}=
 		\begin{bmatrix}
 		0\\-2\\1
 		\end{bmatrix}
 		\end{aligned}
 		\end{equation}
-		再将$\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$单位化得$\boldsymbol{\mu}_1,\boldsymbol{\mu}_2,\boldsymbol{\mu}_3$
+		再将$\bfbt_1,\bfbt_2,\bfbt_3$单位化得$\boldsymbol{\mu}_1,\boldsymbol{\mu}_2,\boldsymbol{\mu}_3$
 		即
 		\begin{equation}
 		\TT=
@@ -157,20 +149,20 @@
 		|\lambda\II-\AA|=(\lambda-6)(\lambda+3)\lambda=0
 		\end{equation}
 		$\lambda=6,\lambda=-3,\lambda=0$的特征向量分别为:
-		\begin{equation}\boldsymbol{\alpha}_1=
+		\begin{equation}\bfaf_1=
 		\begin{bmatrix}
 		-1\\0\\1
 		\end{bmatrix}
-		\boldsymbol{\alpha}_2=
+		\bfaf_2=
 		\begin{bmatrix}
 		1\\-1\\1
 		\end{bmatrix}
-		\boldsymbol{\alpha}_3=
+		\bfaf_3=
 		\begin{bmatrix}
 		1\\2\\1
 		\end{bmatrix}
 		\end{equation}
-		将$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$单位化,即得:
+		将$\bfaf_1,\bfaf_2,\bfaf_3$单位化,即得:
 		\begin{equation}
 		\TT=
 		\begin{bmatrix}
@@ -225,28 +217,28 @@
 		$\AA$的全部特征值是3,1.\\
 		对特征值3,求出$(3\II-\AA)\XX=0$的基础解系:
 		\begin{equation}
-		\boldsymbol{\alpha}_1=
+		\bfaf_1=
 		\begin{bmatrix}
 		0\\0\\1\\1
 		\end{bmatrix},
-		\boldsymbol{\alpha}_2=
+		\bfaf_2=
 		\begin{bmatrix}
 		1\\1\\0\\0
 		\end{bmatrix}.
 		\end{equation}
-		把$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2$单位化,得\\
+		把$\bfaf_1,\bfaf_2$单位化,得\\
 		对特征值1,求出$(\II-\AA)\XX=0$的基础解系:
 		\begin{equation}
-		\boldsymbol{\alpha}_3=
+		\bfaf_3=
 		\begin{bmatrix}
 		0\\0\\-1\\1
 		\end{bmatrix},
-		\boldsymbol{\alpha}_4=
+		\bfaf_4=
 		\begin{bmatrix}
 		-1\\1\\0\\0
 		\end{bmatrix}.
 		\end{equation}
-		因$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{\alpha}_4$已经为正交向量组,即正交化得:
+		因$\bfaf_1,\bfaf_2,\bfaf_3,\bfaf_4$已经为正交向量组,即正交化得:
 		\begin{equation}
 		\TT=
 		\begin{bmatrix}
@@ -255,7 +247,7 @@
 		\frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}&0\\
 		\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}&0
 		\end{bmatrix}
-		\qquad\TT'\boldsymbol{AT}=\DD=diag(3,3,1,1);
+		\qquad\TT'\AA\TT=\DD=diag(3,3,1,1);
 		\end{equation}
 		令
 		\begin{equation}
@@ -290,22 +282,22 @@
 		0&2&3
 		\end{bmatrix}
 		\end{equation}
-		解得$\lambda_1=5,\lambda_2=2,\lambda_3=1$以及对应的特征向量$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$为:
+		解得$\lambda_1=5,\lambda_2=2,\lambda_3=1$以及对应的特征向量$\bfaf_1,\bfaf_2,\bfaf_3$为:
 		\begin{equation}
-		\boldsymbol{\alpha}_1=
+		\bfaf_1=
 		\begin{bmatrix}
 		0\\1\\1
 		\end{bmatrix},
-		\boldsymbol{\alpha}_2=
+		\bfaf_2=
 		\begin{bmatrix}
 		1\\0\\0
 		\end{bmatrix},
-		\boldsymbol{\alpha}_3=
+		\bfaf_3=
 		\begin{bmatrix}
 		0\\-1\\1
 		\end{bmatrix}.
 		\end{equation}
-		对$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$单位化得:
+		对$\bfaf_1,\bfaf_2,\bfaf_3$单位化得:
 		\begin{equation}
 		\TT=
 		\begin{bmatrix}
@@ -313,7 +305,7 @@
 		\frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}\\
 		\frac{1}{\sqrt{2}}&0&\frac{1}{\sqrt{2}}
 		\end{bmatrix}
-		\qquad\TT'\boldsymbol{AT}=\DD=diag(5,2,1);
+		\qquad\TT'\AA\TT=\DD=diag(5,2,1);
 		\end{equation}
 		令
 		\begin{equation}
@@ -332,17 +324,17 @@
 		\end{equation}
 	\end{solution}
 	\begin{exercise}
-		设$\AA$是一个$n$阶正定矩阵，则$|\AA+\boldsymbol{E}|>1$。
+		设$\AA$是一个$n$阶正定矩阵，则$|\AA+\II|>1$。
 	\end{exercise}
 	\begin{proof}
 		设$\AA$的n个实特征值为$\lambda_1,\cdots,\lambda_n$
 		\\有正交矩阵$\CC$使得$\AA=(\CC')^{-1}\DD\CC^{-1}$
 		\begin{equation}
-		|\AA+\boldsymbol{E}|=|\boldsymbol{CDC}'+\boldsymbol{E}|=|\boldsymbol{CDC}'+\boldsymbol{CC}'|=|\CC||\boldsymbol{DC}'+\CC'|=|\DD+\boldsymbol{E}||\CC|^2=(\lambda_1+1)\cdots(\lambda_n+1)>1
+		|\AA+\II|=|\CC\DD\CC'+\II|=|\CC\DD\CC'+\CC\CC'|=|\CC||\DD\CC'+\CC'|=|\DD+\II||\CC|^2=(\lambda_1+1)\cdots(\lambda_n+1)>1
 		\end{equation}
 		且$\lambda_1,\cdots,\lambda_n>0$即
 		\begin{equation}
-		|\AA+\boldsymbol{E}|>1.
+		|\AA+\II|>1.
 		\end{equation}
 	\end{proof}
 	\begin{exercise}
@@ -363,7 +355,7 @@
 		即$\AA\backsimeq\II$
 	\end{proof}
 	\begin{exercise}
-		设$n$阶方阵$\AA$满足条件$\AA'\AA=\boldsymbol{E}$,其中$\AA'$是$\AA$的转置矩阵，$\boldsymbol{E}$为单位矩阵，证明$\AA$的实特征向量所对应的特征值的绝对值等于1.
+		设$n$阶方阵$\AA$满足条件$\AA'\AA=\II$,其中$\AA'$是$\AA$的转置矩阵，$\II$为单位矩阵，证明$\AA$的实特征向量所对应的特征值的绝对值等于1.
 	\end{exercise}
 	\begin{proof}
 		已知$\AA'=\AA^{-1}$\\
@@ -371,21 +363,21 @@
 		\begin{equation}
 		\frac{1}{|\AA|}\frac{1}{\lambda}(-1)^n|\lambda\II-\AA|
 		\end{equation}
-		所以$\frac{1}{|\AA|}\frac{1}{\lambda}(-1)^n=1$,而$|\boldsymbol{AA}'|=|\AA|^2=1,$所以$|\lambda|=1$
+		所以$\frac{1}{|\AA|}\frac{1}{\lambda}(-1)^n=1$,而$|\AA\AA'|=|\AA|^2=1,$所以$|\lambda|=1$
 	\end{proof}
 	\begin{exercise}
-		设$f(x_1,\cdots,x_n)=\XX^T\boldsymbol{AX}$是一实二次型,若存在n维实向量
+		设$f(x_1,\cdots,x_n)=\XX^T\AA\XX$是一实二次型,若存在n维实向量
 		\begin{equation}
-		\XX_1,\XX_2,s.t.,\XX_1^T\boldsymbol{AX}_1>0,\XX_2^T\boldsymbol{AX}_2<0,
+		\XX_1,\XX_2,s.t.,\XX_1^T\AA\XX_1>0,\XX_2^T\AA\XX_2<0,
 		\end{equation}
 		证明:存在$n$维实向量$\AA,s.t.,\AA'\AA\AA=0.$
 	\end{exercise}
 	\begin{proof}
-		设$\AA$的秩为$r$,作实非退化线性替换$\XX=\boldsymbol{CY}$,将$f$化为规范形
+		设$\AA$的秩为$r$,作实非退化线性替换$\XX=\CC\YY$,将$f$化为规范形
 		\begin{equation}
-		f(x_1,\cdots,x_n)=\XX'\boldsymbol{AX}=y_1^2+\cdots+y_p^2-y^2_{p+1}-\cdots-y^2_{p+q}(r=p+q)
+		f(x_1,\cdots,x_n)=\XX'\AA\XX=y_1^2+\cdots+y_p^2-y^2_{p+1}-\cdots-y^2_{p+q}(r=p+q)
 		\end{equation}
-		由于存在两个向量$\XX_1,\XX_2$,使$\XX'_1\boldsymbol{AX}_1>0,\XX'_2\boldsymbol{AX}_2<0$,,从而可得$p>0,q>0$.\\
+		由于存在两个向量$\XX_1,\XX_2$,使$\XX'_1\AA\XX_1>0,\XX'_2\AA\XX_2<0$,,从而可得$p>0,q>0$.\\
 		令
 		\begin{equation}
 		y_1=y_{p+1}=1,y_2=\cdots=y_p=y_{p+2}=\cdots=y_{p+q}=0,
@@ -398,9 +390,9 @@
 		\end{bmatrix}
 		\end{equation}
 		中间的1位于第$p+1$行.\\
-		由于$\XX=\boldsymbol{CY}$非退化,故$\XX_0\ne\boldsymbol{0}$,且有
+		由于$\XX=\CC\YY$非退化,故$\XX_0\ne\boldsymbol{0}$,且有
 		\begin{equation}
-		\XX'_0\boldsymbol{AX}_0=0
+		\XX'_0\AA\XX_0=0
 		\end{equation}
 	\end{proof}
 	\begin{exercise}
@@ -420,11 +412,11 @@
 		\XX'(c\II+\AA)\XX\geqslant 0,\;\XX'(c\II-\AA)\geqslant 0
 		\end{equation}
 		\begin{equation}
-		-c\XX'\XX\leqslant \XX'\boldsymbol{AX}\leqslant c\XX'\XX
+		-c\XX'\XX\leqslant \XX'\AA\XX\leqslant c\XX'\XX
 		\end{equation}
 		即
 		\begin{equation}
-		|\XX'\boldsymbol{AX}|\leqslant c\XX'\XX
+		|\XX'\AA\XX|\leqslant c\XX'\XX
 		\end{equation}
 	\end{proof}
 	\begin{exercise}
@@ -455,7 +447,7 @@
 		(3)$|\AA|\leq a_{11}a_{22}\cdots a_{nn}.$
 	\end{exercise}
 		\begin{proof}
-		(1)作变换$\YY=\boldsymbol{AZ}$即
+		(1)作变换$\YY=\AA\ZZ$即
 		\begin{equation}
 		\begin{bmatrix}
 		y_1\\\vdots\\y_n
@@ -488,7 +480,7 @@
 		y_1&\cdots&y_n&-(y_1z_1+\cdots y_nz_n)
 		\end{vmatrix}\\
 		&=-|\AA|(y_1z_1+\cdots y_nz_n)\\
-		&=-|\AA|\YY'\boldsymbol{Z}=-|\AA|\boldsymbol{Z}'\boldsymbol{AZ}
+		&=-|\AA|\YY'\ZZ=-|\AA|\ZZ'\AA\ZZ
 		\end{aligned}
 		\end{equation}
 		由$\AA$为正定矩阵知,$f(y_1,y_2,\cdots,y_{n-1})$为负定二次型.\\
@@ -509,7 +501,7 @@
 		\begin{equation}
 		|\AA|=g'(a_{n1},\cdots,a_{n,n-1})+a_{nn}\PP_{n-1}
 		\end{equation}
-		由于$g'(a_{n1},\cdots,a_{n,n-1})<0$,所以$|\AA|\leq a_{nn}\boldsymbol{\cdot P}_{n-1}$.
+		由于$g'(a_{n1},\cdots,a_{n,n-1})<0$,所以$|\AA|\leq a_{nn}\boldsymbol{\cdot}\PP_{n-1}$.
 	\end{proof}
 	\begin{proof}
 		(3)由(2),得
@@ -525,20 +517,20 @@
 	\end{exercise}
 	\begin{proof}
 		(1)\\
-		$\AA$正定,所以存在正交矩阵$\PP^{-1}=\boldsymbol{P'}$使得,
+		$\AA$正定,所以存在正交矩阵$\PP^{-1}=\PP'$使得,
 		\begin{equation}
-		\PP'\boldsymbol{AP}=diag\left(a_1,\cdots,a_n\right),
+		\PP'\AA\PP=diag\left(a_1,\cdots,a_n\right),
 		\end{equation}
 		$a_1,\cdots,a_n>0$为$\AA$的特征值.\\
-		$\PP'\boldsymbol{BP}=\PP^{-1}\boldsymbol{BP}$也是对称矩阵,且与$\BB$有相同的特征值.所以存在正交矩阵$\QQ^{-1}=\QQ'$使得,
+		$\PP'\BB\PP=\PP^{-1}\BB\PP$也是对称矩阵,且与$\BB$有相同的特征值.所以存在正交矩阵$\QQ^{-1}=\QQ'$使得,
 		\begin{equation}
-		\QQ'(\PP'\boldsymbol{BP})\QQ=\boldsymbol{Q^{-1}}(\PP^{-1}\boldsymbol{BP})\QQ=diag\left(b_1,\cdots,b_n\right),
+		\QQ'(\PP'\BB\PP)\QQ=\QQ^{-1}(\PP^{-1}\BB\PP)\QQ=diag\left(b_1,\cdots,b_n\right),
 		\end{equation}
 		其中$b_1,\cdots,b_n$为$\BB$的特征值.所以:
 		\begin{equation}
 		\QQ'(\PP'(\AA+\BB)\PP)\QQ=\QQ^{-1}(\PP^{-1}(\AA+\BB)\PP)\QQ=diag\left(a_1+b_1,\cdots,a_n+b_n\right).
 		\end{equation}
-		所以存在实可逆矩阵$\TT=\boldsymbol{PQ}$,使得$\TT'(\AA+\BB)\TT$为对角矩阵.
+		所以存在实可逆矩阵$\TT=\PP\QQ$,使得$\TT'(\AA+\BB)\TT$为对角矩阵.
 	\end{proof}
 	\begin{proof}
 		(2)\\
@@ -548,7 +540,7 @@
 			&=|diag(a_1+b_1,\cdots,a_n+b_n)|\\
 			&=\prod_{i=1}^{n}(a_i+b_i)\\
 			&>\prod_{i=1}^{n}a_i+\prod_{i=1}^{n}b_i\\
-			&=|\PP^{-1}\boldsymbol{AP}|+|\PP^{-1}\boldsymbol{BP}|=|\AA|+|\BB|.
+			&=|\PP^{-1}\AA\PP|+|\PP^{-1}\BB\PP|=|\AA|+|\BB|.
 			\end{align*}
 			\begin{equation}
 			\Rightarrow|\AA+\BB|\ge|\AA|+|\BB|.
@@ -557,13 +549,13 @@
 	\begin{proof}
 		(3)存在一个n级正交矩阵$\TT,s.t.$
 		\begin{equation}
-		\TT'\boldsymbol{AT}=diag\{\lambda_1,\cdots,\lambda_n\}\quad\TT'\boldsymbol{BT}=diag\{\mu_1,\cdots,\mu_n\}.
+		\TT'\AA\TT=diag\{\lambda_1,\cdots,\lambda_n\}\quad\TT'\BB\TT=diag\{\mu_1,\cdots,\mu_n\}.
 		\end{equation}
 		其中$\lambda_1,\cdots,\lambda_n$是$\AA$的全部特征值,$\mu_1,\cdots,\mu_n$是$\BB$的全部特征值.$\AA,\BB$都是正定矩阵,由于:
 		\begin{equation}
-		\TT'(\boldsymbol{AB})\TT=(\TT'\boldsymbol{AT})(\TT'\boldsymbol{BT})=diag\{\lambda_1\mu_1,\cdots,\lambda_n\mu_n \}
+		\TT'(\AA\BB)\TT=(\TT'\AA\TT)(\TT'\BB\TT)=diag\{\lambda_1\mu_1,\cdots,\lambda_n\mu_n \}
 		\end{equation}
-		即$\boldsymbol{AB}$合同与$diag\{\lambda_1\mu_1,\cdots,\lambda_n\mu_n \}$,所以$\boldsymbol{AB}$是正定矩阵.
+		即$\AA\BB$合同与$diag\{\lambda_1\mu_1,\cdots,\lambda_n\mu_n \}$,所以$\AA\BB$是正定矩阵.
 	\end{proof}
 	\begin{exercise}
 		化二次型
@@ -586,17 +578,17 @@
 		\begin{equation}
 		\boldsymbol{v}_1=\begin{bmatrix}-1\\-2\\2\end{bmatrix}\;\boldsymbol{v}_2=\begin{bmatrix}2\\0\\1\end{bmatrix}\;\boldsymbol{v}_3=\begin{bmatrix}-2\\1\\0\end{bmatrix}
 		\end{equation}
-		将$\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3$正交化,单位化得$\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$:
+		将$\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3$正交化,单位化得$\bfbt_1,\bfbt_2,\bfbt_3$:
 		\begin{equation}
-		\boldsymbol{\beta}_1=
+		\bfbt_1=
 		\begin{bmatrix}
 		-\frac{1}{3}\\-\frac{2}{3}\\\frac{2}{3}
 		\end{bmatrix}
-		\boldsymbol{\beta}_2=
+		\bfbt_2=
 		\begin{bmatrix}
 		\frac{2}{\sqrt{5}}\\0\\\frac{1}{\sqrt{5}}
 		\end{bmatrix}
-		\boldsymbol{\beta}_3=
+		\bfbt_3=
 		\begin{bmatrix}
 		-\frac{2}{3\sqrt{5}}\\\frac{5}{3\sqrt{5}}\\\frac{4}{3\sqrt{5}}
 		\end{bmatrix}
@@ -609,7 +601,7 @@
 		-\frac{2}{3}&0&\frac{5}{3\sqrt{5}}\\
 		\frac{2}{3}&\frac{1}{\sqrt{5}}&\frac{4}{3\sqrt{5}}
 		\end{bmatrix}
-		\qquad\TT'\boldsymbol{AT}=\DD=diag\left(10,1,1\right);
+		\qquad\TT'\AA\TT=\DD=diag\left(10,1,1\right);
 		\end{equation}
 		令
 		\begin{equation}
@@ -668,13 +660,13 @@
 		(1)证明$\AA'\AA$正定.\\
 		(2)证明:存在正交矩阵$\PP,\QQ$，使得
 		\begin{equation}
-		\PP'\boldsymbol{AQ}=diag\left(a_1,\cdots,a_n\right),where \; a_i>0,i=1,\cdots,n.
+		\PP'\AA\QQ=diag\left(a_1,\cdots,a_n\right),where \; a_i>0,i=1,\cdots,n.
 		\end{equation}
 	\end{exercise}
 	\begin{proof}
 		(1)
 		\begin{equation}
-		\AA'\AA=\AA'\boldsymbol{IA}
+		\AA'\AA=\AA'\II\AA
 		\end{equation}
 		因此$\AA'\AA$合同与单位矩阵,即$\AA'\AA$正定.
 	\end{proof}
@@ -682,19 +674,19 @@
 		(2)
 		$\AA'\AA$正定,因此存在正交矩阵$\PP$,使得
 		\begin{equation}
-		\PP'\AA'\boldsymbol{AP}=diag(b_1,\cdots,b_n),where\;b_i>0,i=0,\cdots,n.
+		\PP'\AA'\AA\PP=diag(b_1,\cdots,b_n),where\;b_i>0,i=0,\cdots,n.
 		\end{equation}
 		令
 		\begin{equation}
-		\DD=diag\left(\sqrt{b_1},\cdots,\sqrt{b_n}\right),\;\QQ=\AA'\boldsymbol{PD},
+		\DD=diag\left(\sqrt{b_1},\cdots,\sqrt{b_n}\right),\;\QQ=\AA'\PP\DD,
 		\end{equation}
 		容易求得
 		\begin{equation}
-		\QQ'\QQ=(\AA'\boldsymbol{PD})'\AA'\boldsymbol{PD}=\II_n,
+		\QQ'\QQ=(\AA'\PP\DD)'\AA'\PP\DD=\II_n,
 		\end{equation}
 		因此矩阵$\QQ$为正交矩阵,令$a_i=\sqrt{b_i},i=1\cdots,n.$则
 		\begin{equation}
-		\PP'\boldsymbol{AQ}=\DD=diag\left(a_1,\cdots,a_n\right).
+		\PP'\AA\QQ=\DD=diag\left(a_1,\cdots,a_n\right).
 		\end{equation}
 	\end{proof}
 	\begin{exercise}
@@ -725,17 +717,17 @@
 		\end{equation}
 		因此,方程组的两个线性无关的向量为:
 		\begin{equation}
-		\boldsymbol{\alpha}_1=
+		\bfaf_1=
 		\begin{bmatrix}
 		0\\1\\0\\1
 		\end{bmatrix},\;
-		\boldsymbol{\alpha}_2=
+		\bfaf_2=
 		\begin{bmatrix}
 		-6\\9\\1\\0
 		\end{bmatrix}.
 		\end{equation}
-		$W=L(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2)$.
-		设正交补空间$W^\perp$的任一向量为$\boldsymbol{\beta}=(y_1,y_2,y_3,y_4)'$.则$\boldsymbol{\alpha}_1'\boldsymbol{\beta}=\boldsymbol{\alpha}_2'\boldsymbol{\beta}=0$.即
+		$W=L(\bfaf_1,\bfaf_2)$.
+		设正交补空间$W^\perp$的任一向量为$\bfbt=(y_1,y_2,y_3,y_4)'$.则$\bfaf_1'\bfbt=\bfaf_2'\bfbt=0$.即
 		\begin{equation}
 		\begin{cases}
 		y_2+y_4=0\\
@@ -744,33 +736,33 @@
 		\end{equation}
 		因此,上面的方程组的两个线性无关的向量为:
 		\begin{equation}
-		\boldsymbol{\beta}_1=
+		\bfbt_1=
 		\begin{bmatrix}
 		1\\0\\6\\0
 		\end{bmatrix},\;
-		\boldsymbol{\beta}_2=
+		\bfbt_2=
 		\begin{bmatrix}
 		-3\\-2\\0\\2
 		\end{bmatrix}.
 		\end{equation}
-		所以,正交补空间$W^\perp=L(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2)$.
+		所以,正交补空间$W^\perp=L(\bfbt_1,\bfbt_2)$.
 	\end{proof}
 	\begin{exercise}
 		设$\sigma$是有限维线性空间$V$的可逆线性变换.设$W$是$V$中$\sigma-$不变子空间,证明:$W$是$V$中$\sigma^{-1}-$不变子空间.
 	\end{exercise}
 	\begin{proof}
-		已知$\boldsymbol{\alpha}\in W,\sigma(\boldsymbol{\alpha})\in W$.\\
-		设$\sigma(\boldsymbol{\alpha})=\boldsymbol{\beta}$,因$\sigma$可逆,即若:
+		已知$\bfaf\in W,\sigma(\bfaf)\in W$.\\
+		设$\sigma(\bfaf)=\bfbt$,因$\sigma$可逆,即若:
 		\begin{equation}
-		\sigma^{-1}(\boldsymbol{\beta})=\boldsymbol{\alpha}\qquad\boldsymbol{\beta}\;and\;\sigma^{-1}(\boldsymbol{\beta})\in W
+		\sigma^{-1}(\bfbt)=\bfaf\qquad\bfbt\;and\;\sigma^{-1}(\bfbt)\in W
 		\end{equation}
 		所以$W$是$V$中$\sigma^{-1}-$不变子空间
 	\end{proof}
 	下证$\sigma$为双射:
 	\begin{proof}
 		设$\sigma$为可逆变换,它的逆变换为$\sigma^{-1}$.\\
-		任取$\boldsymbol{\xi},\boldsymbol{\eta}\in W$,且$\boldsymbol{\xi}\ne\boldsymbol{\eta}$,则必有$\sigma(\boldsymbol{\xi})\ne\sigma(\boldsymbol{\eta})$.不然,设$\sigma(\boldsymbol{\xi})=\sigma(\boldsymbol{\eta})$,两边左乘$\sigma^{-1}$,有$\boldsymbol{\xi}=\boldsymbol{\eta}$,这与条件矛盾,所以$\sigma$是单射.\\
-		其次,对任一向量$\boldsymbol{\xi}\in W$,必有$\boldsymbol{\eta}$使$\sigma(\boldsymbol{\xi})=\boldsymbol{\eta}$,事实上,令$\sigma^{-1}(\boldsymbol{\eta})=\boldsymbol{\xi}$即可,所以$\sigma$是满射,故$\sigma$是双射,即$\sigma^{-1}(\boldsymbol{\beta})=\boldsymbol{\alpha}$.
+		任取$\bfxi,\bfeta\in W$,且$\bfxi\ne\bfeta$,则必有$\sigma(\bfxi)\ne\sigma(\bfeta)$.不然,设$\sigma(\bfxi)=\sigma(\bfeta)$,两边左乘$\sigma^{-1}$,有$\bfxi=\bfeta$,这与条件矛盾,所以$\sigma$是单射.\\
+		其次,对任一向量$\bfxi\in W$,必有$\bfeta$使$\sigma(\bfxi)=\bfeta$,事实上,令$\sigma^{-1}(\bfeta)=\bfxi$即可,所以$\sigma$是满射,故$\sigma$是双射,即$\sigma^{-1}(\bfbt)=\bfaf$.
 	\end{proof}
 
 	\begin{exercise}
@@ -799,11 +791,11 @@
 		证明:反对称矩阵的特征值为0或者纯虚数。
 	\end{exercise}
 	\begin{proof}
-		设$\AA$是反对称实矩阵,$\lambda$是$\AA$的一个特征值,$\boldsymbol{\xi}$为相应的特征向量,即$\boldsymbol{A\xi}=\lambda\boldsymbol{\xi}$,则
+		设$\AA$是反对称实矩阵,$\lambda$是$\AA$的一个特征值,$\bfxi$为相应的特征向量,即$\AA\bfxi=\lambda\bfxi$,则
 		\begin{equation}
-		\bar{\boldsymbol{\xi}}'\boldsymbol{A\xi}=\bar{\boldsymbol{\xi}}'(-\AA')\boldsymbol{\xi}=-\bar{\boldsymbol{\xi}}'\AA'\boldsymbol{\xi}=-(\AA\bar{\boldsymbol{\xi}})'\boldsymbol{\xi}=-(\overline{\boldsymbol{A\xi}})'\boldsymbol{\xi}
+		\bar{\bfxi}'\AA\bfxi=\bar{\bfxi}'(-\AA')\bfxi=-\bar{\bfxi}'\AA'\bfxi=-(\AA\bar{\bfxi})'\bfxi=-(\overline{\AA\bfxi})'\bfxi
 		\end{equation}
-		即有$\lambda\bar{\boldsymbol{\xi}}\boldsymbol{\xi}=-\bar{\lambda}\bar{\boldsymbol{\xi}}\boldsymbol{\xi}$,从而$\lambda=-\bar{\lambda}$.\\
+		即有$\lambda\bar{\bfxi}\bfxi=-\bar{\lambda}\bar{\bfxi}\bfxi$,从而$\lambda=-\bar{\lambda}$.\\
 		令$\lambda=a+ib$,代入上式得$a+ib=-(a-ib)$,即有$a=0$.故$\lambda$是0或纯虚数.
 	\end{proof}
 	\begin{exercise}
@@ -813,40 +805,40 @@
 		设$\lambda$是$\AA$的特征值,已知$\lambda^{-1}$是$\AA^{-1}$的特征值,由于$\AA$是正交矩阵,$\AA'=\AA^{-1}$,所以$\lambda^{-1}$是$\AA'$的特征值.因为$\AA$与$\AA'$有相同的特征值,所以$\lambda^{-1}$也是$\AA$的特征值.
 	\end{proof}
 	\begin{exercise}
-		设$\AA,\BB$都是实对称矩阵,证明:存在正交矩阵$\QQ,s.t.,\QQ^{-1}\boldsymbol{AQ}=\BB$的充要条件为$\AA,\BB$的特征多项式的根全部相同.
+		设$\AA,\BB$都是实对称矩阵,证明:存在正交矩阵$\QQ,s.t.,\QQ^{-1}\AA\QQ=\BB$的充要条件为$\AA,\BB$的特征多项式的根全部相同.
 	\end{exercise}
 	\begin{proof}
-		必要性.若$\TT'\boldsymbol{AT}=\BB$,即$\AA,\BB$相似,则$\AA,\BB$的特征多项式相同,所以它们的特征根相同.\\
+		必要性.若$\TT'\AA\TT=\BB$,即$\AA,\BB$相似,则$\AA,\BB$的特征多项式相同,所以它们的特征根相同.\\
 		充分性.设$\lambda_1,\lambda_2,\cdots,\lambda_n$为$\AA$和$\BB$的特征值,由$\AA,\BB$为实对称矩阵,则存在正交矩阵$\XX$和$\YY$,使
 		\begin{equation}
-		\XX^{-1}\boldsymbol{AX}=
+		\XX^{-1}\AA\XX=
 		\begin{bmatrix}
 		\lambda_1&&\\
 		&\ddots&\\
 		&&\lambda_n
 		\end{bmatrix}
-		=\YY^{-1}\boldsymbol{BY}
+		=\YY^{-1}\BB\YY
 		\end{equation}
 		于是
 		\begin{equation}
-		\boldsymbol{YX}^{-1}\boldsymbol{AXY}^{-1}=\BB
+		\YY\XX^{-1}\AA\XX\YY^{-1}=\BB
 		\end{equation}
-		令$\TT=\boldsymbol{XY}^{-1}$,由$\XX,\YY$是正交矩阵知,$\TT$也是正交矩阵,且有$\TT^{-1}\boldsymbol{AT}=\BB$.
+		令$\TT=\XX\YY^{-1}$,由$\XX,\YY$是正交矩阵知,$\TT$也是正交矩阵,且有$\TT^{-1}\AA\TT=\BB$.
 	\end{proof}
 	\begin{exercise}
 		设$\AA$是$n$阶实对称矩阵,且$\AA^2=\AA$.证明:存在正交矩阵
 		\begin{equation}
-		\QQ,s.t.,\QQ^{-1}\boldsymbol{AQ}=diag\left(1,\cdots,1,0,\cdots,0\right).
+		\QQ,s.t.,\QQ^{-1}\AA\QQ=diag\left(1,\cdots,1,0,\cdots,0\right).
 		\end{equation}
 	\end{exercise}
 	\begin{proof}
-		设$\lambda$是$\AA$的任意特征值,$\boldsymbol{\xi}$是属于$\lambda$的特征向量,则$\boldsymbol{A\xi}=\lambda\boldsymbol{\xi}$,从而
+		设$\lambda$是$\AA$的任意特征值,$\bfxi$是属于$\lambda$的特征向量,则$\AA\bfxi=\lambda\bfxi$,从而
 		\begin{equation}
-		\AA^2\boldsymbol{\xi}=\AA(\boldsymbol{A\xi})=\AA(\lambda\boldsymbol{\xi})=\lambda\boldsymbol{A\xi}=\lambda^2\boldsymbol{\xi}.
+		\AA^2\bfxi=\AA(\AA\bfxi)=\AA(\lambda\bfxi)=\lambda\AA\bfxi=\lambda^2\bfxi.
 		\end{equation}
-		又由于$\AA^2=\AA$,所以有$\lambda^2\boldsymbol{\xi}=\AA^2\boldsymbol{\xi}=\boldsymbol{A\xi}=\lambda\boldsymbol{\xi}$,即$(\lambda^2-\lambda)\boldsymbol{\xi}=0$,因为$\boldsymbol{\xi}\ne\boldsymbol{0}$,故$\lambda^2-\lambda=0$,从而$\lambda=0$或1,再由定理7知,存在正交矩阵$\QQ$,使
+		又由于$\AA^2=\AA$,所以有$\lambda^2\bfxi=\AA^2\bfxi=\AA\bfxi=\lambda\bfxi$,即$(\lambda^2-\lambda)\bfxi=0$,因为$\bfxi\ne\boldsymbol{0}$,故$\lambda^2-\lambda=0$,从而$\lambda=0$或1,再由定理7知,存在正交矩阵$\QQ$,使
 		\begin{equation}
-		\QQ^{-1}\boldsymbol{AQ}=diag\left(1,\cdots,1,0,\cdots,0\right).
+		\QQ^{-1}\AA\QQ=diag\left(1,\cdots,1,0,\cdots,0\right).
 		\end{equation}
 		在上式中的对角线元素中,1的个数为$\AA$的特征值1的个数,0的个数为$\AA$的特征值0的个数.
 	\end{proof}
