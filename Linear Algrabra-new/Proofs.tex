@@ -1,6 +1,7 @@
 \documentclass[lang=cn,11pt,normal]{elegantbook}
 \usepackage{mathtools}
 \usepackage{LAbf}
+\usepackage{extarrows}
 \usepackage{hyperref}
 % title info
 \title{Proofs}
@@ -126,4 +127,26 @@
 			$\\
 			那么,称$K$是一个数域.
 	\end{definition}
+	\chapter{线性映射}
+	\section{线性映射及其运算}
+	\begin{definition}{线性映射}{}
+		设$V$与$V'$是域$F$上的两个线性空间,$V$到$V'$的一个线性映射$\AA$如果保持加法运算和纯量乘法运算,即
+		\begin{equation}
+			\begin{aligned}
+			&\AA(\alpha+\beta)=\AA(\alpha)+\AA(\beta)\quad&&\forall\alpha,\beta\in V;\\
+			&\AA(k\alpha)=k\AA(\alpha)&&\forall\alpha\in V,k
+			\in F,
+			\end{aligned}
+		\end{equation}
+	\end{definition}
+	\section{线性映射的核与象}
+	\begin{definition}{核与象}{}
+		设$\AA$是域$F$上的线性空间$V$到$V'$的一个线性映射,$V'$的零向量在$\AA$下的原象称为$\AA$的核,记作$\Ker\AA$,即
+		\begin{equation}
+			\Ker\AA=\{\alpha\in V\;|\;\AA\alpha=0\};
+		\end{equation}
+		$\AA$的象(也叫做$\AA$的值域)记作$\Image \AA$或$\AA V$.
+	\end{definition}
+	\section{线性变换的有理标准型}
+	
 \end{document}
