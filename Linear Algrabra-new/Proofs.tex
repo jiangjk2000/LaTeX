@@ -1,0 +1,129 @@
+\documentclass[lang=cn,11pt,normal]{elegantbook}
+\usepackage{mathtools}
+\usepackage{LAbf}
+\usepackage{hyperref}
+% title info
+\title{Proofs}
+\subtitle{定理,定义,推论的证明}
+% bio info
+\author{JJK}
+\institute{Jiang Xi science and technology University}
+\date{\today}
+% extra info
+\version{1.00}
+\extrainfo{Even though the truth is not a happy time, we have to be honest ,because more effort needed to cover the truth. --- Bertr Russell}
+\logo{logo.png}
+\cover{cover2.jpg}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\mainmatter
+	\hypersetup{pageanchor,bookmarksopen=true}
+
+	\chapter{数学分析}
+	\section{多元函数微分学}
+	\subsection{偏导与微分}
+	\begin{definition}{Language余项}{}
+			设$D\subset \RR^n$是一个凸区域$f \in C^{m+1} (D),\bfa=(a_1,\cdots,a_n),\bfa+\bfh=(a_1+h_1,\cdots,a_n+h_n)$是$D$中的两个点，则必存在$\theta \in (0,1),$使得
+			\begin{equation}
+			f(\boldsymbol{a+h})=\sum^m_{k=0}\sum_{|\bfa|=k} \frac{\mathbf{D}^{\boldsymbol{\alpha}}f(\bfa)}{\boldsymbol{\alpha}!} \boldsymbol{h^\alpha} + \RR_m,
+			\end{equation}
+			
+			其中
+			\begin{gather}
+			\RR_m=\sum_{|\boldsymbol{\alpha}|=m+1} \frac{\mathbf{D}^{\boldsymbol{\alpha}}f(\bfa+\theta \bfh)}{\boldsymbol{\alpha}!} \boldsymbol{h^\alpha},
+			\end{gather}
+			称为\boldmath{Lagrange}余项.
+	\end{definition}
+	\begin{proof}
+		固定$\bfa$和$\bfh$，设$t\in[0,1]$，考虑$[0,1]$上的函数$\varphi(t)=f(\bfa+t\bfh)$.显然$\varphi$在$[0,1]$上有$m+1$阶的连续导数.对$\varphi$用单变量函数的Taylor公式，得
+		\begin{equation}
+		\varphi(1)=\varphi (0)+\varphi^{'}(0)+\frac{1}{2!}\varphi^{''}(0)+\cdots+\frac{1}{m!}\varphi^{(m)}(0)+\frac{1}{(m+1)!}\varphi^{(m+1)}(\theta),
+		\end{equation}
+		其中$\theta \in (0,1).$\\
+		显然$\varphi(1)=f(\boldsymbol{a+h}),\varphi(0)=f(\bfa)$.根据复合函数的求导公式,得\\
+		\begin{equation}
+		\varphi^{'}(t)=\frac{\partial f}{\partial x_1}(\bfa+t\bfh)h_1+\dots+\frac{\partial f}{\partial x_n}(\bfa+t\bfh)h_n
+		\end{equation}
+		\begin{equation}
+		=\left(h_1\frac{\partial}{\partial x_1}+\dots+h_n\frac{\partial}{\partial x_n}\right)f(\bfa+t\bfh).
+		\end{equation}
+		这就是说，对$\varphi$求一次导数,相当于把算子
+		\begin{equation}
+		h_1\frac{\partial}{\partial x_1}+\dots+h_n\frac{\partial}{\partial x_n}
+		\end{equation}
+		作用于函数$f(\bfa+t\bfh)$.因而如9.9节中的例5所说的那样,有
+		\begin{equation}
+		\varphi^{''}(t)=\left(h_1\frac{\partial}{\partial x_1}+\dots+h_n\frac{\partial}{\partial x_n}\right)^2f(\bfa+t\bfh),
+		\end{equation}
+		\begin{equation}
+		\vdots
+		\end{equation}
+		\begin{equation}
+		\varphi^{(m)}(t)=\left(h_1\frac{\partial}{\partial x_1}+\dots+h_n\frac{\partial}{\partial x_n}\right)^{m}f(\bfa+t\bfh).
+		\end{equation}
+		根据引理9.10.1，得
+		\begin{equation}
+		\varphi^{(k)}(t)=\left(h_1\frac{\partial}{\partial x_1}+\dots+h_n\frac{\partial}{\partial x_n}\right)^{k}f(\bfa+t\bfh)
+		\end{equation}
+		\begin{equation}
+		=\sum_{|\boldsymbol{\alpha}|=k}\frac{k!}{\boldsymbol{\alpha}!}\frac{\partial^{\alpha_1}}{\partial x^{\alpha_1}_1}\cdots\frac{\partial^{\alpha_n}}{\partial x^{\alpha_n}_n}f(\bfa+t\bfh)\boldsymbol{h^{\alpha}}
+		\end{equation}
+		\begin{equation}
+		=\sum_{|\boldsymbol{\alpha}|=k}\frac{k!}{\boldsymbol{\alpha}!}\mathbf{D}^{\boldsymbol{\alpha}}f(\bfa+t\bfh)\boldsymbol{h^a}.
+		\end{equation}
+		所以\\
+		\begin{equation}
+		\varphi^{k}(0)=\frac{k!}{\boldsymbol{\alpha}!}\mathbf{D}^{\boldsymbol{\alpha}}f(\bfa)\boldsymbol{h^a}
+		\end{equation}
+		将式(1.13)代入式(1.3)，即得要证明的式(1.1).
+	\end{proof}
+	\chapter{高等代数}
+	\section{第一章}
+	\subsection{一元多项式}
+	\begin{definition}{带余除法}{}
+		设$f(x),g(x)\in \mathbb{F}[x]$,其中$g(x)\ne0$,则一定存在唯一的$q(x),r(x)\in\mathbb{F}[x]$,使
+		\begin{equation}
+		f(x)=q(x)g(x)+r(x)\label{2.1}
+		\end{equation}
+		成立,其中$deg(r(x))<deg(g(x))$,或者$r(x)=0$.
+	\end{definition}
+	\begin{proof}
+		(\ref{2.1})式中与的存在性可以对进行数学归纳来证明,略.\\
+		下证唯一性.\\
+		设如果另有$q'(x),r'(x)\in\mathbb{F}[x]$,使
+		\begin{equation}
+		f(x)=q'(x)g(x)+r'(x)
+		\end{equation}
+		成立,其中$deg(r'(x))<deg(g(x))$或者$r'(x)=0$.于是
+		\begin{equation}
+			q(x)g(x)+r(x)=q'(x)g(x)+r'(x),
+		\end{equation}
+		所以
+		\begin{equation}
+			(q(x)-q'(x))g(x)=r'(x)-r(x).
+		\end{equation}
+		如果$q(x)\ne q'(x)$,又因为$g(x)\ne0$,则$r'(x)-r(x)\ne 0$,并且
+		\begin{equation}
+			deg(r'(x)-r(x))=deg(q(x)-q'(x))+deg(g(x))\geqslant deg(g(x))
+		\end{equation}
+		这一矛盾证明了$q(x)=q'(x)$,从而$r'(x)=r(x)$.
+	\end{proof}
+	\begin{theorem}{ }{ }
+		 设$f(x),g(x)\in \mathbb{F}[x]$,其中$g(x)\ne 0$,则$g(x)$整除$f(x)$的充分必要条件是$g(x)$除$f(x)$的余式为0.
+	\end{theorem}
+	\begin{proof}
+		如果$r(x)=0$,则$f(x)=q(x)g(x)$,即$g(x)|f(x)$.反过来,如果$g(x)|f(x)$,则存在$q(x)\in\mathbb{F}[x]$,使得$f(x)=q(x)g(x)=q(x)g(x)+0$,即$r(x)=0$.
+	\end{proof}
+	\subsection{线性方程组}
+	\subsubsection{数域}
+	\begin{definition}{数域}{}
+		复数集的一个子集$K$如果满足:\\
+			$
+			(1)0,1\in K;\\
+			(2)a,b\in K\rightarrow a\pm b,ab\in K,\\
+			a,b\in K,$且$b\ne 0\rightarrow \frac{a}{b}\in K,
+			$\\
+			那么,称$K$是一个数域.
+	\end{definition}
+\end{document}
