@@ -1,3 +1,3 @@
 # LaTeX
 Learning
-用来学习和存储TeX源码和pdf
+This branch is used to store the TeX source code and files of the finished product.
