@@ -1,0 +1,37 @@
+\documentclass[device=pad]{elegantbook}
+
+\usepackage{balance}
+\usepackage{ulem}
+
+\title{English Note}
+\subtitle{Vocabulary Syntax Sentences}
+\author{$\aleph$}
+\institute{Jiang Xi Science and Technology University}
+\date{\today}
+\version{1.00}
+\extrainfo{Victory won\rq t come to us unless we go to it. --- M. Moore}
+\logo{kls}
+\cover{1599}
+
+\begin{document}
+\maketitle
+\tableofcontents
+    %前言部分
+    \frontmatter
+    \input{Preface.tex}
+    %正言部分(分章节)
+    \mainmatter
+    \hypersetup{pageanchor=true}
+    %Chapter:Advanced Vocabulary Conversion
+    \input{Chapter/AdvancedVocabularyConversion.tex}
+    %Chapter:Advanced Phrase
+    \input{Chapter/AdvancedPhrase.tex}
+    %Chapter:Advanced Sentence
+    %\input{Chapter/AdvancedSentence.tex}
+    %Chapter:Special Syntax
+    \input{Chapter/SpecialSyntax.tex}
+    %Chapter:Composition outline
+    %\input{Chapter/CompositionOutline.tex}
+    %Chapter:Translate Vocabulary
+    %\input{Chapter/TranslateVocabulary.tex}
+\end{document}
