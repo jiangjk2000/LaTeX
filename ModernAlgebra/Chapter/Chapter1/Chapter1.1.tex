@@ -1,0 +1,259 @@
+%Produce by:JJK
+%正文部分Chapter1.1
+\chapter{群}\label{chap:1}
+\section{集合论预备知识}\label{sec:1.1}
+群是集合上赋予某种二元运算的一种代数结构.所以在讲述什么是群之前,先要
+介绍集合论中我们所需要的一些预备知识.\par
+一些特定的对象放在一起就叫做一个\textbf{集合}.例如全体正整数构成一个
+集合,表示成~$\mathbb{N}$~.全体整数构成整数集合,表示成~$\mathbb{Z}$~.
+类似地有复数集合~$\mathbb{C}$~,实数集合~$\mathbb{R}$~,有理数集合
+$\mathbb{Q}$~等等.集合~$A$~中每个对象~$a$~叫做~$A$~中的
+\textbf{元素},表示成~$a\in A$~,说成~$a$~属于~$S$~.否则
+,如果某个对象~$b$~不属于~$A$~,则表示成~$b\notin A$~.
+\par
+设~$A$~和~$B$~是两个集合,如果~$A$~中每个元素均是~$B$~中元素,即
+\begin{equation*}
+    a \in A \Rightarrow a \in B.
+\end{equation*}
+则~$A$~叫做~$B$~的一个\textbf{子集},表示成~$A\subseteq B$~或者
+~$B\supseteq A$~.如果~$A\subseteq B$~并且~$B\subseteq A$~,即
+\begin{equation*}
+    a \in A \Leftrightarrow a \in B,
+\end{equation*}
+这也相当于说集合~$A$~与~$B$~包含同样的元素,这时叫做集合~$A$~与
+~$B$~相等,表示成~$A=B$~.如果~$A$~是~$B$~的子集并且不等于~$B$~
+,则~$A$~叫~$B$~的\textbf{真子集},表示成~$A \subset B$~或者
+~$B \supset A$~.不包含任何元素的集合叫做\textbf{空集},表示成
+$\varnothing$.空集显然是每个集合的子集.\par
+可以有许多方式来表达一个确定的集合.例如若集合~$A$~只有限多(不同)
+元素~$a_1,\cdots,a_n(n \in \mathbb{N})$~,则这个集合可表成
+\begin{equation*}
+    A=\{a_1,\cdots,a_n\}.
+\end{equation*}
+只有有限多个元素的集合叫\textbf{有限集},否则叫\textbf{无限集}
+.具有~$n$~个元素的集合叫~$n$~\textbf{元集},元素个数表示成
+~$|A|=n$~.在一般情形下,集合~$\bm{S}$~中具有某种性质~$P$~的
+全体元素构成的集合通常表成
+\begin{equation*}
+    \{x \in \bm{S}~|~x~\mbox{有性质}~P\}.
+\end{equation*}
+例如:偶数集合~$\{0,\pm2,\pm4,\cdots\}$~可以表成
+\begin{equation*}
+    \{n \in \bm{Z}~|~n \equiv 0(\mathrm{mod}~2)\}.
+\end{equation*}\par
+由一些已知集合构作新的集合通常用集合上的运算来实现.下面是集合
+的一些最基本运算.设~$A$~和~$B$~是两个集合,它们的公共元素组成
+的集合叫做~$A$~和~$B$~的\textbf{交},表示成~$A \cap B$~,即
+\begin{equation*}
+    A \cap B = \{x~|~ x \in A~\mbox{并且}~x \in B\}.
+\end{equation*}
+类似地,~$n$~个集合~$A_1,\cdots,A_n$~的交为
+\begin{equation*}
+    \bigcap_{i=1}^{n}A_i=A_1 \cap A_2 \cap \cdots \cap A_n = 
+    \{x~|~x \in A_i,1 \leq i \leq n\}.
+\end{equation*}
+更一般地,对于任意多个集合形成的集族~$\{A_i~|~i \in I\}$~(其中
+$I$~是一个集合,叫该集族的\textbf{下标集合},对于每个~$i \in I$~
+,~$A_i$~是该集族中的一个集合),它们的交为
+\begin{equation*}
+    \bigcap_{i \in I}A_i = \{x~|~x \in A_i,\mbox{对每个}~i \in I\}.
+\end{equation*}\par
+第二个集合运算是集合的\textbf{并},集合~$A$~与~$B$~的并表示
+成~$A \cup B$~,定义为
+\begin{equation*}
+    A \cup B = \{x~|~x \in A~\mbox{或者}~x \in B\}.
+\end{equation*}
+类似地:
+\begin{equation*}
+    \bigcup^n_{i=1}A_i=A_1 \cup A_2 \cup \cdots \cup A_n = \{
+x~|~x \in A_i,\mbox{对某个}~i \in I\}.
+\end{equation*}
+设~$A$~是~$B$~的子集,则~$B-A=\{x~|~x \in B,x \notin A\}$~叫做子
+集~$A$~(关于B)的\textbf{补集}.如果在讨论问题中所涉及的集合均是某个
+固定集合~$\varOmega$~的子集,则~$\varOmega-A$~也常常简称作~$A$~的
+补集,表示成~$\bar{A}$~.\par
+设~$A$~和~$B$~是两个集合,我们把集合
+\begin{equation*}
+    A \times B = \{(a,b)~|~a \in A,b \in B\}
+\end{equation*}
+叫做~$A$~和~$B$~的直积.在~$A \times B$~中,~$(a,b)=(a',b')$~当且
+仅当~$a=a'$~并且~$b=b'$~.类似可定义多个集合的直积
+\begin{equation*}
+    A_1 \times \cdots \times A_n = \prod^n_{i=1}A_i=\{(a_1,
+    \cdots,a_n)~|~a_i \in A_i,1 \leq i \leq n\}.
+\end{equation*}
+\begin{equation*}
+    \prod_{i \in I}A_i = \{(a_i)_{i \in I}~|~a_i \in A_i,
+    \mbox{对每个}~i \in I\}
+\end{equation*}
+为了比较不同的集合,需要将不同集合发生联系,这就是集合之间的映射.
+~$f$~叫做从集合~$A$~到集合~$B$~的\textbf{映射},是指对每个
+~$a \in A$~均有确定办法给出集合~$B$~中唯一的对应元素,这个对应
+元素叫做~$a$~在映射~$f$~之下的象,表示成~$f(a)$~.而“~$f$~把
+~$a$~映成~$f(a)$~”这件事表示成~$a \rightarrow f(a)$~.从~$A$~
+到~$B$~的映射~$f$~表示成~$f:A \rightarrow B$~或者
+~$A \xrightarrow{f} B$~.
+设~$f:A \rightarrow B$~和~$g:B \rightarrow C$~都是集合之间的
+映射.则可经过连续作用,得到一个从~$A$~到~$C$~的映射
+\begin{equation*}
+    g \circ f:A \rightarrow C,\quad (g \circ f)(a)=g(f(a)).
+\end{equation*}
+映射~$g \circ f$~叫做~$f$~与~$g$~的\textbf{合成}映射.\par
+设~$f$~和~$g$~均是从集合~$A$~到集合~$B$~的映射,我们称~$f$~
+和~$g$~相等(表示成~$f=g$),是指对于每个~$a \in A$~,均有
+~$f(a)=g(a)$~.\par
+\begin{yinli}\label{yl:1.1.1}
+    (合成运算满足结合律)设~$f:A \rightarrow B,~g:B 
+    \rightarrow C,~h:C \rightarrow D$~均是集合的映射,则
+    \begin{equation*}
+h \circ (g \circ f)=(h \circ g) \circ f.
+    \end{equation*}
+\end{yinli}
+\begin{proof}
+    对于~$a \in A$~,令~$f(a)=b,g(b)=c,h(c)=d.$~则\par
+    \center{$(g \circ f)(a)=c,~(h \circ g)(b)=d.$于是}\par
+    \center{($h \circ (g \circ f))(a)=h(c)=d,((h \circ g) 
+    \circ f)(a)=(h \circ g)(b)=d.$}
+\end{proof}\par
+设~$f:A \rightarrow B$~是集合的映射.对于~$A$~的每个子集~$A'$~,令
+\begin{equation*}
+    f(A')=\{f(x)~|~x \in A'\},
+\end{equation*}
+这是~$B$~的子集,叫做~$A$~在~$f$~之下的\textbf{象}.另一方面,
+对于~$B$~的子集~$B'$~,令~$f^{-1}(B')=\{x \in A~|~f(x) \in B'\}$~
+,这是~$A$~的子集,叫做~$B'$~的原象.如果~$f(A)=B$~,即~$B$~中每个元
+素均是~$A$~中某个元素(在~$f$~之下)的象,则~$f$~叫做\textbf{满射}.另
+一方面,如果~$A$~中不同元素被~$f$~映成~$B$~中不同元素,即:
+~$a,~a' \in A,~a \neq a' \Rightarrow f(a) \neq f(a')$~,则~$f$~叫
+做单射.最后,若~$f:A \rightarrow B$~同时是单射和满射,则~$f$~叫做
+\textbf{一一映射}或\textbf{一一对应}.例如:将集合~$A$~中每个元素均
+映成其自身的映射
+\begin{equation*}
+    1_A:A \rightarrow A,~1_A(a)=a.
+\end{equation*}
+就是~$A$~到~$A$~的一一对应.映射~$1_A$~叫做集合~$A$~的恒等映射.通常
+采用下面引理来判断一个映射是否为一一对应.
+\begin{yinli}\label{yl:1.1.2}
+    映射~$f:A \rightarrow B$~是一一对应的充分必要条件是存在映射
+    ~$g:B \rightarrow A$~,使得~$f \circ g=1_B,g \circ f=1_A$~.
+\end{yinli}
+\begin{proof}
+    如果~$f$~是一一对应,由定义知这意味着对每个~$b \in B$~,均存在唯
+    一的~$a \in A$~使得~$f^{-1}(b)=a$~(存在性由于~$f$~是满射,唯一性
+    由于~$f$~是单射)于是可定义映射
+    \begin{equation*}
+        g:B \rightarrow A,~g(b)=f^{-1}(b).
+    \end{equation*}
+    直接验证~$g \circ f=1_A$~和~$f \circ g=1_B$~;成立.\par
+    另一方面,如果~$f$~不是满射,则存在~$b \in B$~,使得
+    ~$f^{-1}(b)=\varnothing$~.所以对每个映射~$g:B \rightarrow A$~,
+    均有~$(f \circ g)(b)=f(g(b) \neq b$~.于是~$f \circ g \neq 1_B$~.
+    如果~$f$~不是单射,则存在~$a,~a' \in A,~a \neq a'$~,使得~$f(a)=
+    f(a')=b$~.那么对于每个映射~$g:B \rightarrow A,(g \circ f)(a)=g(b)=(g \circ f)
+    (a'),$~于是~$g \circ f \neq 1_A$~.所以若存在~$g:B \rightarrow A$~
+    使得~$f \circ g=1_B$~并且~$g \circ f=1_A$~.则必然~$f$~是一一对应.
+\end{proof}
+当~$f:A \rightarrow B$~是一一对应时,满足~$f \circ g=1_B$~和
+~$g \circ f=1_A$~的映射~$g:B \rightarrow A$~是唯一的.这是因为:
+若~$g:B \rightarrow A$~也有性质~$f\circ g'=1_B,g'\circ f=1_A,$~
+则~$g'=g' \circ 1_B=g'\circ (f\circ g)=(g'\circ f)\circ g=1_A\circ g=g.$~
+我们将这个唯一存在的映射~$g$~叫做~$f$~的逆映射,表示成~$f^{-1}$~.\par
+设~$A$~是集合,集合~$A \times A$~的每个子集~$R$~叫做集合~$A$~上的一个
+\textbf{关系}.如果~$(a,b)\in R$~,便称~$a$~和~$b$~有关系~$R$~,写成~$aRb$~.
+例如~$\RR\times \RR$~中子集
+\begin{equation*}
+    R=\{(a,b)\in \RR\times \RR~|~a~\mbox{比}~b~\mbox{大}\}
+\end{equation*}
+则实数~$a$~和~$b$~有关系~$R$~即指~$a$~比~$b$~大,这就是“大于”关系.通常将
+这个关系记成~$a>b$~.同样还有~$\RR$~上的关系~$\geq$~(大于或
+等于),~$<$~(小于),~$\leq$~(小于或等于),~$=$~(等于).集合~$A$~上的关系
+$\sim$~叫做\textbf{等价关系},是指它满足如下三个条件:\par
+(1)自反性:~$a \sim a$~(对于每个~$a \in A$~)\par
+(2)对称性:若~$a \sim b$,则~$b \sim a$.\par
+(3)传递性:若~$a \sim b,~b \sim c,$~则~$a \sim c$.\par
+设~$\sim$~是集合~$A$~上的等价关系.如果~$a \sim b$~,由对称性知~$b \sim a$
+.这时称元素~$a$~和~$b$~等价.对于每个~$a \in A$,以~$[a]$~表示~$A$~中与
+$a$~等价的全部元素构成的集合,即
+\begin{equation*}
+    [a]={\{b \in A~|~b \sim a\}}.
+\end{equation*}
+由自反性知~$a \in [a]$~,称~$[a]$~为~$a$~所在的等价类,由传递性可知同一等
+价类中任意二元素彼此等价(设~$b,c\in [a]$~,则~$b \sim a$,~$a \sim c$~,于是
+~$b \sim c$~).不同等价类之间没有公共元素(为什么?)因此集合~$S$~是一些等价类
+~$\{[a_i]|i \in I\}$~的并,而这些等价类是两两不相交的.我们从每个等价类~$[a_i]$~
+中取出一个元素~$b$~;(即~$b_i \in [a_i]$~),则~$R=\{b_i|i \in I\}$~具有如下
+性质:~$A$~中每个元素均等价于某个~$b$~,而不同的~$b$~彼此不等价.我们把具有这
+样性质的~$R$~叫做~$S$~对于等价关系~$\sim$~的完全代表系.于是
+\begin{equation}
+    A=\bigcup_{a \in R}[a](\mbox{两两不相交之并}). \tag{$\ast$}\label{eq:1.1*}
+\end{equation}
+一般地,若集合~$A$~是它的某些子集~$\{A_i|i \in I\}$~之并,并且~$A$~;两两不相交
+,便称~$\{A_i|i \in I\}$~是集合~$S$~的一个\textbf{分拆}.如上所述,~$S$~上的每个等价关系
+给出集合~$A$~的一个分拆\eqref{eq:1.1*}.反过来,如果~$\{A_i|i \in I\}$~是集合~$A$~
+的一个分拆,可如下定义~$A$~上一个关系:对于~$a,b \in A,$~
+\begin{equation*}
+    a \sim b \Leftrightarrow a~\mbox{和}~b~\mbox{在同一}~A_i~\mbox{之中},
+\end{equation*}
+请读者证明这是等价关系.以~$E$~表示~$A$~的全部等价关系,以~$P$~表示~$A$~的全部分拆
+,则上面由等价关系到分拆的映射~$f:E \rightarrow P$~和从分拆到等价关系的映射
+~$g:P \rightarrow E$~满足~$f \circ g=1_P,~g \circ f=1_E$~,从而~$f$~是一一对应
+\thmref{yl:1.1.2}.换句话说,集合A上的等价关系和A的分拆是一一对应的.\par
+例如,设~$F$~是由某些集合构成的集族.在~$F$~上定义如下的关系:对于~$A,B \in F$~,
+\begin{equation*}
+    A \sim B \Leftrightarrow \mbox{存在从~$A$~到~$B$~的一一对应}.
+\end{equation*}
+这是~$F$~上的等价关系(自反性:~$1_A:A \rightarrow A$~是一一对应,从而~$A \sim A$~.
+对称性:若~$f:A \rightarrow B$~是一一对应,则~$f^{-1}:B \rightarrow A$~是一一对应,
+从而~$A \sim B \Rightarrow B \sim A$~.传递性基于习题\ref{xiti:1.1.3}.)对于这
+种等价关系,彼此等价的集合叫做是\textbf{等势}的.比如说,两个有限集合等势(即存在一一
+对应)的充要条件是它们有同样多元素,即~$|A|=|B|$.与正整数集合~$N$~等势的集合叫做
+\textbf{可数无限集合},其他无限集合叫做\textbf{不可数集合}.熟知实数集合~$R$~是不可
+数集合.而正偶整数的全体~$E$~是可数(无穷)集合,因为存在着一一对应
+~$\NN\rightarrow E,~n \rightarrow 2n$.这个例子也表明,无限集合~$A$~
+的一个真子集可以与~$A$~等势!\par
+设~$A$~是集合.从~$A \times A$~到~$A$~的映射
+\begin{equation*}
+    f:A \times A \rightarrow A
+\end{equation*}
+叫做集合A上的一个(二元)运算.例如:通常复数加法就是运算
+\begin{equation*}
+    f:\CC \times \CC \rightarrow \CC,~f(\alpha,\beta)=\alpha+\beta.
+\end{equation*}
+我们经常把集合~$A$~上的运算表示成~$\cdot$,即对于~$a,b \in A,~f(a,b)$~
+写成~$a \cdot b(\in A)$~或者更简单写成~$ab$.\par
+运算~$\cdot$~叫做满足结合律,是指
+\begin{equation*}
+    a \cdot (b \cdot c)=(a \cdot b) \cdot c(\mbox{对任意~$a,b,c \in A$}).
+\end{equation*}
+运算~$\cdot$~叫做满足交换律,是指
+\begin{equation*}
+    a \cdot b=b \cdot a(\mbox{对任意~$a,b \in A$}).
+\end{equation*}
+一个集合赋予满足某些特定性质的(一个或多个)二元运算,便得到各种代数结构.
+本书讲述群、环和域三种代数结构.
+
+%习题1.1\label{xiti:1.1}
+\xiti
+\begin{enumerate}
+    \item 设~$B,A_i(i \in )$~试证:\label{xiti:1.1.1}
+    \begin{enumerate}
+        \item B $\cap\left(\bigcup_{i \in I}A_i\right)=\bigcup_{i \in I}(B\cap A_i),$
+        \item B $\cup\left(\bigcap_{i \in I}A_i\right)=\bigcap_{i \in I}(B\cup A_i),$
+        \item $\overline{\bigcup_{i \in I}A_i}=\bigcap_{i \in I}\overline{A_i},~
+        \overline{\bigcap_{i \in I}A_i}=\bigcup_{i \in I}\overline{A_i}.$
+    \end{enumerate}
+    \item 设~$f:A \rightarrow B$~是集合的映射,~$A$~是非空集合.试证:\label{xiti:1.1.2}
+    \begin{enumerate}
+        \item ~$f$~为单射~$\Leftrightarrow$~存在~$g:B \rightarrow A$,使得~$g \circ f=1_A$~.
+        \item ~$f$~为满射~$\Leftrightarrow$~存在~$h:B \rightarrow A$.使得~~$f \circ h=1_B$~.
+    \end{enumerate}
+    \item 如果~$f:A \rightarrow B,~g:B \rightarrow C$~均是一一对应,则~$g \circ f:A \rightarrow C$~也是一一对应,且~$(g \circ f)^{-1}=f^{-1} \circ g^{-1}$.\label{xiti:1.1.3}
+    \item 设~$A$~是有限集,~$P(A)$~是~$A$~的全部子集(包括空集)所构成的集族,试证~$|P(A)|=2^{|A|}$.换句话说,~$n$~元集合共有~$2^n$~个不同的子集.\label{xiti:1.1.4}
+    \item 设~$f:A \rightarrow B$~是集合的映射.在集合~$A$~上如下定义一个关系:对任意~$a,a' \in A,~a \sim a'$~当且仅当~$f(a)=f(a')$.试证,这样定义的关系是一个等价关系.\label{xiti:1.1.5}
+    \item 证明等价关系的三个条件是互相独立的,也就是说,已知任意两个条件不能推出第三个条件.\label{xiti:1.1.6}
+    \item 设~$A,B$~是两个有限集合.\label{xiti:1.1.7}
+    \begin{enumerate}
+        \item $A$~到~$B$~的不同映射共有多少个?
+        \item $A$~上不同的二元运算共有多少个?
+    \end{enumerate}
+\end{enumerate}

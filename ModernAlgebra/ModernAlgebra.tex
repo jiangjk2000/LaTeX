@@ -1,0 +1,51 @@
+\documentclass[hyperref,oneside]{book}
+
+\usepackage{MathBF}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+%\geometry{a5paper,scale=0.8}
+\usepackage{newtxtext,newtxmath}
+\usepackage{amsmath,mathrsfs,amsfonts,amssymb}
+\usepackage{bm}
+\usepackage{esint}
+\usepackage{tikz}
+\usepackage{graphics}
+\usepackage[UTF8,scheme=chinese,heading=true]{ctex}
+
+%\everymath{\displaystyle}
+
+\newcommand{\xiti}{\section*{\large{习\qquad题}}}
+\newcommand\thmref[1]{引理~\ref{#1}}
+\newtheorem{yinli}{引理}
+\newtheorem{example}{例}
+\newenvironment{proof}{\par\noindent\textbf{证明\quad}}{\hfill$\Box$\quad\par}
+\newenvironment{Definition}{\par\noindent\textbf{定义\quad}}
+
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\begin{document}
+    %封面设置
+    \begin{titlepage}
+        \includegraphics[scale=1.4]{Figure/ctanlion.eps}
+        %\includegraphics{Figure/ctanlion.eps}
+        \begin{center}
+            \Huge{\bfseries近世代数引论}\\
+            \vspace{15pt}
+            \Large\itshape{冯克勤}\\
+			\Large\itshape{仅供学习使用，严禁商业使用}
+        \end{center}
+    \end{titlepage}
+    %前言部分
+    \frontmatter
+    \input{Preface.tex}
+    %正言部分(分章节)
+    \mainmatter
+    \tableofcontents
+    %第一章
+    \input{Chapter/Chapter1/Chapter1.1.tex}
+    \input{Chapter/Chapter1/Chapter1.2.tex}
+    %第二章
+    %第三章
+\end{document}
