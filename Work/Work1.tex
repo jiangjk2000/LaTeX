@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{newtxtext,newtxmath}
+
+\usepackage[UTF8,scheme=chinese]{ctex}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{language=Matlab}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\section*{数学建模-作业4}
+\begin{enumerate}
+    \item SIR~模型可写作~$\frac{\mathrm{d}i}{\mathrm{d}t}=\mu i(\sigma s - 1)$~,$\frac{\mathrm{d}s}{\mathrm{d}t}=-\lambda si$.由后一方程知~$\frac{\mathrm{d}s}{\mathrm{d}t}<0,s(t)$~单调减少.
+    \begin{enumerate}
+        \item 若~$s_0 > \frac{1}{\sigma}$~,当~$\frac{1}{\sigma}<s<s_0$~时~$,\frac{\mathrm{d}i}{\mathrm{d}t}>0,i(t)$~增加;当~$s=\frac{1}{\sigma}$~时,~$\frac{\mathrm{d}i}{\mathrm{d}t}=0$~达到最大值~$i_m$;当~$s<\frac{1}{\sigma}$~时,~$\frac{\mathrm{d}i}{\mathrm{d}t}<0,i(t)$~减少且~$i_m=0$.
+        \item 若~$s_0<1\frac{1}{\sigma},\frac{\mathrm{d}i}{\mathrm{d}t}<0$,i(t)~单调递减至0.
+    \end{enumerate}
+    \item 在图~$12$~坐标下铅球运动方程为
+    \begin{equation*}
+        \ddot{x}=0,\quad \ddot{y}=-g,\quad x(0)=0,\quad y(0)=h
+    \end{equation*}
+    \begin{equation*}
+        \dot{x}(0)=v\;\cos{\alpha},\quad \dot{y}(0)=v\;\sin{\alpha}
+    \end{equation*}
+    解出~$x(t),y(t)$~后,可以求得铅球掷远为
+    \begin{equation*}
+        R= \frac{v^2}{g} \sin{\alpha} \cos{\alpha} + \left( \frac{v^2}{g^2} \sin^2{\alpha} + \frac{2h}{g} \right)^{1/2} v\cos{\alpha}
+    \end{equation*}
+    这个关系还可以表为~$R^2g=2v^2 \cos^2{\alpha}(h+R \tan{\alpha})$.\\
+    由此计算~$\left.\frac{\mathrm{d}R}{\mathrm{d}\alpha} \right|_{\alpha^{*}}=0$~,得最佳出手角度~$\alpha^{*}=\sin^{-1}{\frac{v}{\sqrt{2(v^2+gh)}}},$~最佳成绩~$R^{*}=\frac{v}{g}\sqrt{v^2+2gh}$~.设~$h=1.5m,v=10\;m/s$~,则~$\alpha^{*}\approx 41.4^{\circ},R^{*}=11.4\;m$~.
+    
+    \item 设~$f(p,v,s,\rho)=0$~量纲表达式:~$[p]=L^2MT^{-3},[v]=LT^{-1},[s]=L^{2},[\rho]=L^{-3}M$~,解得~$F(\pi)=0,\pi = p^{-1}v^{3}s\rho$~,故~$p=\lambda v^3 s \rho$~.
+    \newpage
+    \item 代码如下:
+    \begin{lstlisting}
+    x = [464,788,229,13,127,13
+        499,8605,1444,403,557,1223
+        5,9,3,20,23,124
+        62,527,128,163,67,146
+        79,749,140,43,130,273
+        146,1285,272,225,219,542];
+    x_all=[2918,16814,2875,1570,2341,5414];
+    a=x./x_all;
+    y=[1500;4200;3000;500;950;3000];
+    w=eye(6)-a;
+    q1=w\y
+    q2=w^-1
+
+    \end{lstlisting}
+\end{enumerate}
+
+
+\end{document}
